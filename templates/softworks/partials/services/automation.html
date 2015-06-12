@@ -1,0 +1,30 @@
+{% extends "softworks_base.html" %}
+
+{% block content %}
+ 
+      <div class="jumbotron">
+                <img id="automated_testing_logo" src="{{ url_for('static',
+                filename='img/automated_testing.jpg') }}" style="float : center;" alt="Automated Testing
+                Logo"/>
+              
+      </div>
+
+        <div class="row">
+          <div class="col-lg-12">
+          <p>At Softworks we understand automated testing and know that it is not just GUI automation. 
+	  GUI automation is often the most expensive type of automation there is. Thus we follow the 
+	  Agile Automation Testing Pyramid that shows where to start with automated testing. </p>
+
+	  <p>We start with unit testing as it provides the greatest ROI.Then we bring in tools like Cucumber
+	  or Fitnessand focus on system / Integration level testing. Once Integration testing is successful 
+	  we can move on to GUI t e st automation where we use tools like Selenium, Windmill, Watir, or QTP. </p>
+
+	  <p>We often see automation projects fail because of a misunderstanding of how best to implement automated
+	  testing. By following this simple set of guidelines we can consistently deliver value to our customers 
+	  and ensure maximum ROI is obtained for automation.</p>
+          </div>
+        
+        </div>
+
+  {{super () }}
+{% endblock %}

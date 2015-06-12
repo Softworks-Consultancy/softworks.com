@@ -1,0 +1,42 @@
+{% extends "softworks_base.html" %}
+
+
+{% block content %}
+<div class="row">
+  <div class="col-lg-12">
+  <p>&nbsp;</p>
+  <p>At Softworks we believe there is no cookie-cutter testing model.  Therefore we focus on Agile Testing, and our testing practices adhere to the Agile Manifesto.  We value those statements in grey, but we assign a greater value to those statements in black and green. Our focus is on:</p>
+  </div> 
+     
+</div>
+
+<div class="row">
+ <div class="col-lg-4">
+  <img id="Agile_Manifesto_logo" src="{{ url_for('static',filename='img/AgileManifesto.png') }}" style="float : center;" alt="Agile Manifesto Logo"/>
+ </div>
+  <div class="col-lg-5">
+  <ol>
+<li><strong>Customer collaboration</strong> is paramount to improving quality software.  A good testing team acts like the headlights for an application, illuminating where things are headed.  We focus more on ensuring the application is headed towards high quality than on simply finding bugs. QA should be responsible for suggesting process changes if necessary, for thinking like the customer and raising questions about how the software works in addition to simply verifying requirements.</li>
+<p>&nbsp;</p>
+
+<li><strong>Process is very important</strong> at Softworks as it helps to define how things get done efficiently but we also believe there are times when collaboration is more important.  We don’t simply let process totally define our roles.  For example, if we spot a problem with the build system, we will work with the build master to get it fixed, regardless whether it’s a QA responsibility or not.</li>
+
+<p>&nbsp;</p>
+
+<li>  <strong>Responding to change</strong> &#8211; If things change we strive to be flexible.  At Softworks we engage as part of your team, not just external consultants. While planning is important, customer needs change and we strive to be flexible and accommodate those changes. The important thing is to do what is necessary to ensure the highest quality applications are delivered to meet the customer requirements.</li>
+
+<p>&nbsp;</p>
+
+<li><strong>Working software is key</strong> &#8211; To this end we focus on providing rapid turn around on testing tasks.  This sometimes means more exploratory testing and less documentation, sometimes the opposite, sometimes it means using Behavioral Driven Development or Acceptance Testing Driven Design to ensure that each User Story / Requirement is verified quickly.  What ever it means in your company’s particular environment, that is exactly what we will do.</li>
+</ol>
+</div> 
+  <div class="col-lg-3">
+  <h2><span class="label label-default col-lg-12">About Us</span></h2>
+  <img id="About_us_logo" src="{{ url_for('static',filename='img/clap.jpg') }}" style="float : center;" alt="About Us Logo"/><br>
+  For more information and pricing please contact a Softworks <a href="/contact">sales representative</a> now.
+  </div>
+
+</div>
+
+  {{super () }}
+{% endblock %}

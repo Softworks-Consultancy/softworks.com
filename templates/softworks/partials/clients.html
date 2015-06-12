@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+ <!--=== Purchase Block ===-->
+ <div class="panel panel-default">
+            <div class="panel-heading">
+                 <img class="pull-left" 
+                 src="{% static 'img/softworks_logo_small.png'%}"
+                 alt="company logo">
+                  <h3 class="text-muted">Recent Clients</h3>
+                  <p>With years of experience and 100+ clients served, we have
+                  the skills needed to make your project a success. Below are some
+                  clients that we have helped.</p>
+              </div>
+    </div><!--/row-->
+    <!-- End Purchase Block -->
+
+    <!--=== Slider ===-->
+    <div class="slider-inner">
+        <div id="da-slider" class="da-slider">
+            <div class="da-slide">
+                <h2>
+                <img src="{% static 'img/nga_logo.png' %}" alt="">
+                <br/> NGA Human Resources
+              </h2>
+              <p>Selenium based GUI automation <br />
+               Over 2000 scripts run on four browsers<br />
+               Ensuring the quality of a global HR product.
+              <p>
+                <div class="da-img"><img class="img-responsive"
+                   src="{% static 'img/nga_selenium.png' %}" alt=""></div>
+            </div>
+            <div class="da-slide">
+              <h2>
+                <img alt="Dagang Net" src="{% static 'img/dnt_logo.jpg' %}" >
+                <br/> Dagang Net
+              </h2>
+              <p>Performance test on production website<br />
+                 Utilized CloudTest to generate load<br />
+                 Achieved 600% performance improvment<br/> 
+                 With no new hardware
+              </p>
+                <div class="da-img"><img class="img-responsive"
+                   src="{% static 'img/cloudtest-monitor.jpg' %}" alt=""></div>
+            </div>
+            <div class="da-slide">
+              <h2>
+                <img alt="mrcesar.com"  src="{% static 'img/mrcesar.png' %}" >
+                <br/> MrCesar.com
+              </h2>
+              <p>Continuous Integration Setup<br />
+                 Front and backend automated testing<br />
+                 Against web and mobile<br/> 
+              </p>
+                <div class="da-img"><img class="img-responsive"
+                   src="{% static 'img/ci.png' %}" alt=""></div>
+            </div>
+            <div class="da-slide">
+              <h2>
+                <img alt="Ainability"  src="{% static 'img/ainability.png' %}" >
+                <br/> AinAbility
+              </h2>
+              <p>Location Based eCommerce Platform<br />
+                 For locally sourced organic foods<br />
+                 Built with Python, Django, Angular, <br/>
+                 MongoDB and of course Agile Testing
+              </p>
+                <div class="da-img"><img class="img-responsive"
+                   src="{% static 'img/sh.jpg' %}" alt=""></div>
+            </div>
+            <div class="da-arrows">
+                <span class="da-arrows-prev"></span>
+                <span class="da-arrows-next"></span>		
+            </div>
+        </div>
+    </div><!--/slider-->
+    <!--=== End Slider ===-->
+<script type="text/javascript">
+    jQuery(document).ready(function() {
+      $('#da-slider').cslider({
+          autoplay: true,
+          inervalSec: 10
+        });
+    });
+</script>
+
+<br><br>
+ <!--=== Purchase Block ===-->
+ <div class="panel panel-default">
+            <div class="panel-heading text-center">
+                  <h3 class="text-muted">More Clients</h3>
+                  <p>While that's only a few of our clients.  Here are some
+                  more.</p>
+              </div>
+    </div><!--/row-->
+    <!-- End Purchase Block -->
+
+
+
+<div class="row text-center">
+  <img class="img-responsive" alt="clients"
+     src="{% static 'img/clients.png' %}">
+</div>

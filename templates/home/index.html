@@ -1,0 +1,38 @@
+{% extends '_base.html' %}
+{% load staticfiles %}
+{% block main %}
+<div id="header">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 header-right">
+        <nav class="navbar navbar-default">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed"
+              data-toggle="collapse" data-target="#headerNavigation" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#/home">
+              <h3 class="text-muted nav-header">Softworks Consultancy</h3>
+            </a>
+          </div>            
+          <div class="collapse navbar-collapse" id="headerNavigation">
+            <ul class="nav navbar-nav pull-right">
+              <li><a class="nav-link" href="#/">Home</a></li>
+              <li><a class="nav-link" href="#/services">Services</a></li>
+              <li><a class="nav-link" href="#/contact">Contact</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </div>
+  <hr class="nav-header">
+  </div>
+</div>
+<div id="content" class="container"> 
+  <div ng-view></div>
+</div>
+{% endblock main %}

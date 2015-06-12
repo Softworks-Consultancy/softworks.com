@@ -1,0 +1,46 @@
+language: python
+
+python:
+  - 3.4
+
+addons:
+ postgresql : "9.3"
+
+before_script:
+  - psql -c 'drop database if exists sh;' -U postgres
+  - psql -c 'create database sh;' -U postgres
+  - mkdir -p shippable/testresults
+  - mkdir -p shippable/codecoverage
+  - mkdir -p ~/.aws
+  - echo '[profile cesar]' > ~/.aws/config
+  - echo "aws_access_key_id = $AWSAccessKeyId" >> ~/.aws/config
+  - echo "aws_secret_access_key = $AWSSecretKey" >> ~/.aws/config
+
+env:
+  global:
+    - RDS_HOSTNAME=127.0.0.1 RDS_USERNAME=postgres RDS_PASSWORD="postgres" RDS_DB_NAME=ebdb RDS_PORT=5432
+    - AWSAccessKeyId=AKIAIWHQ4ILAZCWB7ATA
+    - secure: aO2oTyXsG7axaRMro+h4wvVajcYecASuL+xfkeqqTUM+ByaaU8Z/iDUpZ88AywzGje/IPVpv9cr6HaV7/dLR9lwMWJ6V3/HGP+/wOGhfqX2to5vy+Hifo56sMHTNxP9MD1dU7hOXFBPF+VndzdVJcOncK1T0hnqLHssfHAWvVWCE1KjK5QDXxMgAOn52XS70FCh4uKubGXpua555qcZxmFneCQKRz8IuJDE7AnShtK22VTL7qexoETtAI+SZeKIUoAor1cFKuYFOqrp9NttlnS8qTpXPKnxrVYzy0KRCXbn/glgz86JN57Bg6+N3FFO4ptSRLOw/jTq6dxelHGZJ8A==
+install:
+  - SUDO=$(which sudo) && $SUDO pip install awsebcli
+  - pip install -r requirements.txt
+
+
+script:
+  - mkdir -p .elasticbeanstalk
+  - cp config.yml .elasticbeanstalk/
+  - python manage.py test --with-coverage --cover-package="." --cover-erase --cover-branches --cover-xml --cover-xml-file="shippable/codecoverage/coverage.xml" --with-xunit --xunit-file="shippable/testresults/nosetests.xml"
+
+
+after_success:
+  - eb deploy --debug
+
+notifications:
+     email:
+         recipients:
+             - sultan.maiyaki@softworks.com.my
+             - jeremy@softworks.com.my 
+             - aaron.myatt@softworks.com.my
+             
+         on_success: always
+         on_failure: always
