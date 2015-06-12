@@ -7,18 +7,17 @@ addons:
  postgresql : "9.3"
 
 before_script:
-  - psql -c 'drop database if exists sh;' -U postgres
-  - psql -c 'create database sh;' -U postgres
+  - psql -c 'drop database if exists softworks;' -U postgres
+  - psql -c 'create database softworks;' -U postgres
   - mkdir -p shippable/testresults
   - mkdir -p shippable/codecoverage
   - mkdir -p ~/.aws
-  - echo '[profile softworks]' > ~/.aws/config
+  - echo '[profile eb-cli]' > ~/.aws/config
   - echo "aws_access_key_id = $AWSAccessKeyId" >> ~/.aws/config
   - echo "aws_secret_access_key = $AWSSecretKey" >> ~/.aws/config
 
 env:
   global:
-    - RDS_HOSTNAME=127.0.0.1 RDS_USERNAME=postgres RDS_PASSWORD="postgres" RDS_DB_NAME=ebdb RDS_PORT=5432
     - AWSAccessKeyId=AKIAJF4LXSQISB3VZXTQ
     - secure: P8XT2Q0UATnjU0zo8AJBXGzG73orvZqnPV8AUPQogDkwneQ83GAZPwyjp4QXUXMj3VCQ24r80B98oN7AQMw+CO2c5X8cDXxjCPyZDLtFOWIxoIo48744lt/tGRcF/GpvbgVWYkl9d/CIo1/6nj2epSWy5lKgc2/VBN7mQKAXxexEa6dTU2S/V0Hc0bmucPh1hxv/ynQnYvFvHMc2FwiiRXygD87yc+bQobcScxoOoPCU10ClSZ213IZildrnBfhxIPm2dvC4TGYp2JhQw7TE7g8P42xMDKlbWmlG4uPjQ1k7URX8MUwcuFi8JWJZF6P/BZSCxnKpjdp1uOSUZY1S8Q==
 install:
