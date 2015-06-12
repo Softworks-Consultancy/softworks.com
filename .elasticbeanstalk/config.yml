@@ -1,0 +1,10 @@
+branch-defaults:
+  master:
+    environment: softworks-prod
+global:
+  application_name: softworks.com
+  default_ec2_keyname: softworks-aws-eb
+  default_platform: Docker 1.6.0
+  default_region: ap-southeast-1
+  profile: softworks
+  sc: git

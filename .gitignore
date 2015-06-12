@@ -30,11 +30,3 @@ pip-log.txt
 docs/tmp
 docs/_build
 cover
-
-#aws stuffs
-.elasticbeanstalk/*
-
-# Elastic Beanstalk Files
-.elasticbeanstalk/*
-!.elasticbeanstalk/*.cfg.yml
-!.elasticbeanstalk/*.global.yml
