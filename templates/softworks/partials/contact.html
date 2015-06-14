@@ -26,24 +26,25 @@
 </div>
   <hr>
 <div class="row">
-  <div class="col-xs-8">
+  <div class="col-sm-8">
+    <form>{{from.csrf_token}}
       <div class="row form-group">
-        <div class="col-xs-12">
-          <input type="text" class="form-control" id="fullName" name="fullName" placeholder="Full Name" required="">
+        <div class="col-sm-12">
+          <input type="text" class="form-control" id="fullName" ng-model="contact.name" placeholder="Full Name" required="">
         </div>
       </div>
       <div class="row form-group">
-          <div class="col-xs-6">
-          <input type="email" class="form-control" name="email" placeholder="Email" required="">
+          <div class="col-sm-6">
+          <input type="email" class="form-control" ng-model="contact.email" placeholder="Email" required="">
           </div>
-          <div class="col-xs-6">
-          <input type="email" class="form-control" name="phone" placeholder="Phone" required="">
+          <div class="col-sm-6">
+          <input type="tel" class="form-control" ng-model="contact.phone" placeholder="Phone" >
           </div>
       </div>
       <div class="row form-group">
-          <div class="col-xs-12">
-          <select type="select" placeholder="Service Interested In" class="form-control" name="servicetype" id="servicetype">
-            <option>Select Type of Serivce Required </option>
+          <div class="col-sm-12">
+          <select type="select" placeholder="Service Interested In" class="form-control" ng-model="contact.servicetype" id="servicetype">
+            <option value="" disabled selected style='color:#999!important;display:none'>Select Type of Serivce Required </option>
             <option>Agile Testing</option>
             <option>Automation</option>
             <option>Mobile Phone Testing</option>
@@ -58,17 +59,25 @@
           </div>
       </div>
       <div class="row form-group">
-        <div class="col-xs-12">
-          <textarea type="message" class="form-control" rows="5" name="message" id="message" placeholder="Tell us your requirements" value="{{
-          request.form.message}}" required></textarea>
+        <div class="col-sm-12">
+          <textarea type="message" class="form-control" rows="5" ng-model="contact.message" id="message" placeholder="Tell us your requirements" required></textarea>
       </div>
       </div>
       <div class="row form-group">
-          <div class="col-xs-12">
-            <button class="btn btn-default pull-right">Contact Us</button>
+
+          <div class="col-sm-12">
+            <button class="btn btn-default pull-right" ng-click="contactus()">Contact Us</button>
           </div>
+        </div>
+      <div class="row form-group">
+        <div class="col-sm-12">
+        <div class="alert alert-success fade in">
+            <a class="close" ng-show="sent" data-dismiss="alert">&times;</a>
+            Thanks for contacting us.  Well get back to you as soon as possible.
+        </div>
+        </div>
       </div>
-    
+    </form> 
   </div>
   <div class="col-sm-3 pull-right">
 
@@ -88,8 +97,6 @@
   </div>
   
 </div><!--/row-->
-
-
 
 
   <script type='text/javascript'>

@@ -27,7 +27,7 @@ angular.module('softworks', [
         controller: 'IndexController'
     }).when('/contact', {
         templateUrl: 'partials/contact',
-        controller: 'IndexController'
+        controller: 'ContactController'
     })
     .otherwise({redirectTo: '/'});
 }])
