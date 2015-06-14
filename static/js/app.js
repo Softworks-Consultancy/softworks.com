@@ -25,6 +25,9 @@ angular.module('softworks', [
     }).when('/clients', {
         templateUrl: 'partials/clients',
         controller: 'IndexController'
-    });
-    // .otherwise({redirectTo: '/'});
+    }).when('/contact', {
+        templateUrl: 'partials/contact',
+        controller: 'IndexController'
+    })
+    .otherwise({redirectTo: '/'});
 }])
