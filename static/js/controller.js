@@ -15,6 +15,8 @@ angular.module('softworks')
 
   $scope.contactus = function() {
     $scope.sent=false;
+    if ($scope.contactform.$invalid) {return;}
+    console.log($scope.contactform);
     $http.post("/api/v1/contact",
               $scope.contact)
       .then(function() { $scope.sent=true;});
