@@ -11,13 +11,13 @@ angular.module('softworks')
 .controller('ContactController', ['$scope', '$http',function($scope, $http){
 
   $scope.contact = {};
-  $scope.sent=true;
+  $scope.sent=false;
 
   $scope.contactus = function() {
     $scope.sent=false;
     if ($scope.contactform.$invalid) {return;}
-    console.log($scope.contactform);
-    $http.post("/api/v1/contact",
+    console.log($scope.contact);
+    $http.post("/api/v1/contact/",
               $scope.contact)
       .then(function() { $scope.sent=true;});
   }

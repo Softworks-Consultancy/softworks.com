@@ -5,7 +5,8 @@ from rest_framework import routers
 from home import views as homeviews
 
 router = routers.DefaultRouter()
-'''router.register(r'user', homeviews.UserViewSet)
+router.register(r'contact', homeviews.ContactRequestViewSet)
+'''
 router.register(r'student', homeviews.StudentViewSet)
 router.register(r'highschool', homeviews.HighSchoolViewSet)
 '''
