@@ -32,6 +32,7 @@ run pip3 install -r /home/docker/code/requirements.txt
 
 #setup django stuff
 run cd /home/docker/code && python3 manage.py collectstatic --noinput
+run cd /home/docker/code && python3 manage.py migrate --noinput
 
 expose 80
 cmd ["supervisord", "-n"]
