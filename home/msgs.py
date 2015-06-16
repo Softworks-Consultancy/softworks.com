@@ -11,7 +11,7 @@ class EmailThread(threading.Thread):
     def run(self):
         #mail_admins(self.subject, self.message)
         send_mail(self.subject, self.message, settings.EMAIL_HOST_USER,
-                  settings.ADMINS)
+                  ["jeremy@softworks.com.my",])
 
 def send_email(data, no_thread=False):
     '''
@@ -32,7 +32,7 @@ def send_email(data, no_thread=False):
            data['servicetype'], data['message'])
     if no_thread:
         send_mail(subject, message, settings.EMAIL_HOST_USER,
-                  settings.ADMINS)
+                  ["jeremy@softworks.com.my",])
     else:
         EmailThread(subject, message).start()
 

@@ -109,6 +109,8 @@ WSGI_APPLICATION = 'softworks.wsgi.application'
 
 
 # Database for amazon RDS
+#dbadminsoftworks
+#22222dbadminsoft
 if 'RDS_DB_NAME' in os.environ:
     DATABASES = {
         'default': {

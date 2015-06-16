@@ -17,6 +17,7 @@ class SendMsgsTest(TestCase):
        } 
 
     def test_send_email(self):
+        mail.outbox = []
         msgs.send_email(self.data,True)
         self.assertEqual(len(mail.outbox),1)
         mailmsg = mail.outbox[0]
