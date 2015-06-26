@@ -40,9 +40,8 @@
     transition: all 0.4s ease-in-out;
 }
 
-#map-canvas {
+.map-canvas {
   	width: 100%; 
   	height: 300px;
 	margin: 0;
-	padding: 15px;
 }

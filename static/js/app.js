@@ -4,6 +4,7 @@
 angular.module('softworks', [
   'ngRoute',
   'ui.bootstrap',
+  'ngMaps',
 ])
 .config(function($interpolateProvider) {
    $interpolateProvider.startSymbol('[[');

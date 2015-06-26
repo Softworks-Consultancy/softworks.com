@@ -79,9 +79,9 @@
 
       <address>
         <strong>Softworks Consultancy<br> Sdn Bhd (1000154-M)</strong><br>
-          20, Lorong Bruas<br>
-          Bukit Damansara <br>
-          50490 Kuala Lumpur,<br>
+          C-1-15 Plaza Damas, Jalan Sri Hartamas 1<br>
+          Sri Hartamas <br>
+          50480 Kuala Lumpur,<br>
           MALAYSIA<br>
           P: +6012 305 1396
       </address>
@@ -95,13 +95,16 @@
 </div><!--/row-->
 <hr />
 <div class="row">
-  <div id="map-canvas">
+    <map ng-transclude class="map-canvas" 
+      center="map.center"
+      options="map.options">
+        <marker position="marker.position"></marker>
+    </map>
 </div>
 
   <script type='text/javascript'>
-  (function() {
+  /*(function() {
 
-    /* google maps */
     google.maps.visualRefresh = true;
 
     var map;
@@ -130,4 +133,5 @@
     google.maps.event.addDomListener(window, 'load', initialize);
 
 })();
+*/
  </script>
